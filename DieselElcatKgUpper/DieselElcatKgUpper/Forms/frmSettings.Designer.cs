@@ -33,6 +33,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.TextBox();
+            this.btnSave = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,11 +82,29 @@
             this.txtLogin.Size = new System.Drawing.Size(174, 20);
             this.txtLogin.TabIndex = 6;
             // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnSave.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnSave.IconColor = System.Drawing.Color.LimeGreen;
+            this.btnSave.IconSize = 34;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(777, 679);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Rotation = 0D;
+            this.btnSave.Size = new System.Drawing.Size(87, 34);
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
             // frmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 725);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmSettings";
             this.Text = "frmSettings";
@@ -102,5 +121,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.TextBox txtLogin;
+        private FontAwesome.Sharp.IconButton btnSave;
     }
 }
