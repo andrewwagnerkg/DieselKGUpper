@@ -54,15 +54,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmMain.cs">
+    <Compile Include="Classes\IUpper.cs" />
+    <Compile Include="Data\Account.cs" />
+    <Compile Include="Data\UpRecord.cs" />
+    <Compile Include="Forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -88,6 +91,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Selenium.Chrome.WebDriver.79.0.0\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.79.0.0\build\Selenium.Chrome.WebDriver.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
