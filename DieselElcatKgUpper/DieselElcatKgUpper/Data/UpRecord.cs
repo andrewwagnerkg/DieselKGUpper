@@ -8,6 +8,9 @@ namespace DieselElcatKgUpper.Data
 {
     public class UpRecord
     {
+        public int ThemeId { get; set; }
+        public DateTime LastUpdate { get; set; }
+        public Account Account { get; set; }
 
     }
 }
