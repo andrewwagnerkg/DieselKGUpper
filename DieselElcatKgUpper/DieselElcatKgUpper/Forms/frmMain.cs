@@ -11,6 +11,7 @@ namespace DieselElcatKgUpper
         public frmMain()
         {
             InitializeComponent();
+            ShowChild(new frmRecords());
         }
 
         private void ShowChild(Form form)

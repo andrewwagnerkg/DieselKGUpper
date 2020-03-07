@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.pnlContent = new System.Windows.Forms.Panel();
-            this.btnRecords = new FontAwesome.Sharp.IconButton();
-            this.btnAddTheme = new FontAwesome.Sharp.IconButton();
-            this.btnAddAccount = new FontAwesome.Sharp.IconButton();
             this.btnSettings = new FontAwesome.Sharp.IconButton();
+            this.btnAddAccount = new FontAwesome.Sharp.IconButton();
+            this.btnAddTheme = new FontAwesome.Sharp.IconButton();
+            this.btnRecords = new FontAwesome.Sharp.IconButton();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,65 +48,6 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(1043, 96);
             this.pnlMenu.TabIndex = 0;
-            // 
-            // pnlContent
-            // 
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(0, 96);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1043, 541);
-            this.pnlContent.TabIndex = 1;
-            // 
-            // btnRecords
-            // 
-            this.btnRecords.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnRecords.IconChar = FontAwesome.Sharp.IconChar.AlignJustify;
-            this.btnRecords.IconColor = System.Drawing.Color.Tomato;
-            this.btnRecords.IconSize = 48;
-            this.btnRecords.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRecords.Location = new System.Drawing.Point(12, 12);
-            this.btnRecords.Name = "btnRecords";
-            this.btnRecords.Rotation = 0D;
-            this.btnRecords.Size = new System.Drawing.Size(75, 75);
-            this.btnRecords.TabIndex = 0;
-            this.btnRecords.Text = "Записи тем";
-            this.btnRecords.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRecords.UseVisualStyleBackColor = true;
-            this.btnRecords.Click += new System.EventHandler(this.btnRecords_Click);
-            // 
-            // btnAddTheme
-            // 
-            this.btnAddTheme.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnAddTheme.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnAddTheme.IconColor = System.Drawing.Color.DodgerBlue;
-            this.btnAddTheme.IconSize = 48;
-            this.btnAddTheme.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAddTheme.Location = new System.Drawing.Point(93, 12);
-            this.btnAddTheme.Name = "btnAddTheme";
-            this.btnAddTheme.Rotation = 0D;
-            this.btnAddTheme.Size = new System.Drawing.Size(75, 75);
-            this.btnAddTheme.TabIndex = 0;
-            this.btnAddTheme.Text = "Добавить тему";
-            this.btnAddTheme.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddTheme.UseVisualStyleBackColor = true;
-            this.btnAddTheme.Click += new System.EventHandler(this.btnAddTheme_Click);
-            // 
-            // btnAddAccount
-            // 
-            this.btnAddAccount.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnAddAccount.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.btnAddAccount.IconColor = System.Drawing.Color.Maroon;
-            this.btnAddAccount.IconSize = 48;
-            this.btnAddAccount.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAddAccount.Location = new System.Drawing.Point(174, 12);
-            this.btnAddAccount.Name = "btnAddAccount";
-            this.btnAddAccount.Rotation = 0D;
-            this.btnAddAccount.Size = new System.Drawing.Size(75, 75);
-            this.btnAddAccount.TabIndex = 0;
-            this.btnAddAccount.Text = "Добавить аккаунт";
-            this.btnAddAccount.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddAccount.UseVisualStyleBackColor = true;
-            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
             // btnSettings
             // 
@@ -126,6 +67,67 @@
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
+            // btnAddAccount
+            // 
+            this.btnAddAccount.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnAddAccount.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.btnAddAccount.IconColor = System.Drawing.Color.Maroon;
+            this.btnAddAccount.IconSize = 48;
+            this.btnAddAccount.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddAccount.Location = new System.Drawing.Point(174, 12);
+            this.btnAddAccount.Name = "btnAddAccount";
+            this.btnAddAccount.Rotation = 0D;
+            this.btnAddAccount.Size = new System.Drawing.Size(75, 75);
+            this.btnAddAccount.TabIndex = 0;
+            this.btnAddAccount.Text = "Добавить аккаунт";
+            this.btnAddAccount.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAddAccount.UseVisualStyleBackColor = true;
+            this.btnAddAccount.Visible = false;
+            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
+            // 
+            // btnAddTheme
+            // 
+            this.btnAddTheme.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnAddTheme.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAddTheme.IconColor = System.Drawing.Color.DodgerBlue;
+            this.btnAddTheme.IconSize = 48;
+            this.btnAddTheme.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddTheme.Location = new System.Drawing.Point(93, 12);
+            this.btnAddTheme.Name = "btnAddTheme";
+            this.btnAddTheme.Rotation = 0D;
+            this.btnAddTheme.Size = new System.Drawing.Size(75, 75);
+            this.btnAddTheme.TabIndex = 0;
+            this.btnAddTheme.Text = "Добавить тему";
+            this.btnAddTheme.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAddTheme.UseVisualStyleBackColor = true;
+            this.btnAddTheme.Click += new System.EventHandler(this.btnAddTheme_Click);
+            // 
+            // btnRecords
+            // 
+            this.btnRecords.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnRecords.IconChar = FontAwesome.Sharp.IconChar.AlignJustify;
+            this.btnRecords.IconColor = System.Drawing.Color.Tomato;
+            this.btnRecords.IconSize = 48;
+            this.btnRecords.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRecords.Location = new System.Drawing.Point(12, 12);
+            this.btnRecords.Name = "btnRecords";
+            this.btnRecords.Rotation = 0D;
+            this.btnRecords.Size = new System.Drawing.Size(75, 75);
+            this.btnRecords.TabIndex = 0;
+            this.btnRecords.Text = "Записи тем";
+            this.btnRecords.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRecords.UseVisualStyleBackColor = true;
+            this.btnRecords.Click += new System.EventHandler(this.btnRecords_Click);
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(0, 96);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlContent.Size = new System.Drawing.Size(1043, 541);
+            this.pnlContent.TabIndex = 1;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,7 +135,7 @@
             this.ClientSize = new System.Drawing.Size(1043, 637);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlMenu);
-            this.MinimumSize = new System.Drawing.Size(520, 0);
+            this.MinimumSize = new System.Drawing.Size(520, 39);
             this.Name = "frmMain";
             this.Text = "Diesel kg Upper";
             this.pnlMenu.ResumeLayout(false);
