@@ -11,6 +11,6 @@ namespace DieselElcatKgUpper.Data
         public int ThemeId { get; set; }
         public DateTime LastUpdate { get; set; }
         public Account Account { get; set; }
-
+        public string Result { get; set; }
     }
 }
