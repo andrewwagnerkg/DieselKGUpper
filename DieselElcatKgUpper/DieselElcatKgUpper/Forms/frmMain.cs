@@ -13,7 +13,7 @@ namespace DieselElcatKgUpper
         {
             InitializeComponent();
             ShowChild(new frmRecords());
-            this.Text += $" [{AccountManager.GetInstance().Account.Login}]";
+            this.Text += $" - [{AccountManager.GetInstance().Account.Login}]";
         }
 
         private void ShowChild(Form form)
