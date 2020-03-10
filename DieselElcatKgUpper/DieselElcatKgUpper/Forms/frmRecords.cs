@@ -1,4 +1,5 @@
-﻿using DieselElcatKgUpper.Data;
+﻿using DieselElcatKgUpper.Classes;
+using DieselElcatKgUpper.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,11 +18,24 @@ namespace DieselElcatKgUpper.Forms
         {
             InitializeComponent();
             UpRecordManager.GetInstance().Update(dataGridView);
+            UpWorker.GetInstance().ListChanged += FrmMain_ListChanged;
+        }
+
+        private void FrmMain_ListChanged()
+        {
+            try
+            {
+                Invoke((MethodInvoker)delegate { UpRecordManager.GetInstance().Update(dataGridView); });
+            }
+            catch
+            {
+
+            }
         }
 
         private void btnStartPause_Click(object sender, EventArgs e)
         {
-
+            UpWorker.GetInstance().isPause = !UpWorker.GetInstance().isPause;
         }
     }
 }

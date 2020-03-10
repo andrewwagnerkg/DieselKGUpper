@@ -47,8 +47,9 @@ namespace DieselElcatKgUpper.Data
 
         public void Update(DataGridView grid)
         {
-            grid.DataSource = null;
+            grid.DataSource = null; 
             grid.DataSource = UpRecords;
+            
         }
     }
 }

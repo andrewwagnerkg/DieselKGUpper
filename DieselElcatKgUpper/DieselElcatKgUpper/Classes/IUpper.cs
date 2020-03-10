@@ -1,6 +1,8 @@
-﻿namespace DieselElcatKgUpper.Classes
+﻿using System;
+
+namespace DieselElcatKgUpper.Classes
 {
-    public interface IUpper
+    public interface IUpper : IDisposable
     {
         void Login(string login, string password);
         void Logout();

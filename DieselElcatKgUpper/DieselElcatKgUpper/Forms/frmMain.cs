@@ -1,4 +1,5 @@
-﻿using DieselElcatKgUpper.Data;
+﻿using DieselElcatKgUpper.Classes;
+using DieselElcatKgUpper.Data;
 using DieselElcatKgUpper.Forms;
 using System.Windows.Forms;
 
@@ -16,6 +17,7 @@ namespace DieselElcatKgUpper
             InitializeComponent();
             ShowChild(new frmRecords());
             this.Text += $" - [{AccountManager.GetInstance().Account.Login}]";
+            
         }
 
         private void ShowChild(Form form)
@@ -61,6 +63,7 @@ namespace DieselElcatKgUpper
 
         private void выходToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
+            UpWorker.GetInstance().isWork = !UpWorker.GetInstance().isWork;
             forseclose = true;
             Application.Exit();
         }
