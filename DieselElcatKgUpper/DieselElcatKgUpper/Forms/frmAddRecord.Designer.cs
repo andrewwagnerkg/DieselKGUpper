@@ -37,10 +37,10 @@
             this.txtUrl = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.upRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.themeUrlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastUpdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resultDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.upRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -81,6 +81,7 @@
             this.btnRemoove.Size = new System.Drawing.Size(53, 47);
             this.btnRemoove.TabIndex = 1;
             this.btnRemoove.UseVisualStyleBackColor = true;
+            this.btnRemoove.Click += new System.EventHandler(this.btnRemoove_Click);
             // 
             // btnAdd
             // 
@@ -128,10 +129,7 @@
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(1014, 569);
             this.dataGridView.TabIndex = 0;
-            // 
-            // upRecordBindingSource
-            // 
-            this.upRecordBindingSource.DataSource = typeof(DieselElcatKgUpper.Data.UpRecord);
+            this.dataGridView.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
             // 
             // themeUrlDataGridViewTextBoxColumn
             // 
@@ -158,6 +156,10 @@
             this.resultDataGridViewTextBoxColumn.Name = "resultDataGridViewTextBoxColumn";
             this.resultDataGridViewTextBoxColumn.Width = 62;
             // 
+            // upRecordBindingSource
+            // 
+            this.upRecordBindingSource.DataSource = typeof(DieselElcatKgUpper.Data.UpRecord);
+            // 
             // frmAddRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +169,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmAddRecord";
             this.Text = "frmAddRecord";
+            this.Load += new System.EventHandler(this.frmAddRecord_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
