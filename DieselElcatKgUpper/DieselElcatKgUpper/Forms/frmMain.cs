@@ -81,5 +81,12 @@ namespace DieselElcatKgUpper
             { this.isShown = !isShown; Hide(); }
 
         }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            MessageBox.Show("Diesel kg Upper - автоматизирует процесс пожднятия темы на форуме diesel.elcat.kg\n" +
+                "Разработчик данного программного обеспечения не несет ответсвенность за использование программы в комерческих целях \n" +
+                " или иных случаях противоречащих правилам форума diesel.elcat.kg", "О программе");
+        }
     }
 }
