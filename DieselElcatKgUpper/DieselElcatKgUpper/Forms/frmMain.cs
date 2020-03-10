@@ -7,6 +7,8 @@ namespace DieselElcatKgUpper
     public partial class frmMain : Form
     {
 
+        private bool isShown=true;
+        private bool forseclose = false;
         private Form CurrentForm = null;
 
         public frmMain()
@@ -48,6 +50,36 @@ namespace DieselElcatKgUpper
         private void btnSettings_Click(object sender, System.EventArgs e)
         {
             ShowChild(new frmSettings());
+        }
+
+        private void показатьСкрытьToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            if (isShown) Hide();
+            else { Show(); this.WindowState = FormWindowState.Normal; }
+            isShown = !isShown;
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            forseclose = true;
+            Application.Exit();
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = !forseclose;
+            if(!forseclose)
+            {
+                Hide();
+                isShown = !isShown;
+            }
+        }
+
+        private void frmMain_Resize(object sender, System.EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            { this.isShown = !isShown; Hide(); }
+
         }
     }
 }

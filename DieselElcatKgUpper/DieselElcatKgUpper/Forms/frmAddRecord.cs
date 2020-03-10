@@ -30,22 +30,18 @@ namespace DieselElcatKgUpper.Forms
             UpRecordManager.GetInstance().UpRecords.Add(currentRecord);
             UpRecordManager.GetInstance().Save();
             UpRecordManager.GetInstance().Update(dataGridView);
-
         }
 
         private void dataGridView_SelectionChanged(object sender, EventArgs e)
         {
-
         }
 
         private void frmAddRecord_Load(object sender, EventArgs e)
         {
-
         }
 
         private void dataGridView_RowEnters(object sender, DataGridViewCellEventArgs e)
         {
-            // MessageBox.Show(dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
             currentRecord = new UpRecord()
             {
                 ThemeUrl = dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString(),
