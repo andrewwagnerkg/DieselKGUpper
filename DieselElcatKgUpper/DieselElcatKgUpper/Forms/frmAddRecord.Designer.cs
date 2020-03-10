@@ -28,16 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblId = new System.Windows.Forms.Label();
             this.btnRemoove = new FontAwesome.Sharp.IconButton();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
-            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtUrl = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.lblId = new System.Windows.Forms.Label();
+            this.upRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.themeUrlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastUpdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resultDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upRecordBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -45,12 +52,21 @@
             this.panel1.Controls.Add(this.lblId);
             this.panel1.Controls.Add(this.btnRemoove);
             this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.txtId);
+            this.panel1.Controls.Add(this.txtUrl);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1014, 90);
             this.panel1.TabIndex = 0;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(4, 13);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(50, 13);
+            this.lblId.TabIndex = 2;
+            this.lblId.Text = "Url темы";
             // 
             // btnRemoove
             // 
@@ -59,7 +75,7 @@
             this.btnRemoove.IconColor = System.Drawing.Color.DeepPink;
             this.btnRemoove.IconSize = 48;
             this.btnRemoove.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnRemoove.Location = new System.Drawing.Point(201, 19);
+            this.btnRemoove.Location = new System.Drawing.Point(387, 19);
             this.btnRemoove.Name = "btnRemoove";
             this.btnRemoove.Rotation = 0D;
             this.btnRemoove.Size = new System.Drawing.Size(53, 47);
@@ -73,19 +89,20 @@
             this.btnAdd.IconColor = System.Drawing.Color.DodgerBlue;
             this.btnAdd.IconSize = 48;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnAdd.Location = new System.Drawing.Point(142, 19);
+            this.btnAdd.Location = new System.Drawing.Point(328, 19);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Rotation = 0D;
             this.btnAdd.Size = new System.Drawing.Size(53, 47);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtId
+            // txtUrl
             // 
-            this.txtId.Location = new System.Drawing.Point(1, 33);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(130, 20);
-            this.txtId.TabIndex = 0;
+            this.txtUrl.Location = new System.Drawing.Point(1, 33);
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.Size = new System.Drawing.Size(321, 20);
+            this.txtUrl.TabIndex = 0;
             // 
             // panel2
             // 
@@ -98,21 +115,48 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.themeUrlDataGridViewTextBoxColumn,
+            this.lastUpdateDataGridViewTextBoxColumn,
+            this.resultDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.upRecordBindingSource;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(1014, 569);
             this.dataGridView.TabIndex = 0;
             // 
-            // lblId
+            // upRecordBindingSource
             // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(4, 13);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(46, 13);
-            this.lblId.TabIndex = 2;
-            this.lblId.Text = "Id темы";
+            this.upRecordBindingSource.DataSource = typeof(DieselElcatKgUpper.Data.UpRecord);
+            // 
+            // themeUrlDataGridViewTextBoxColumn
+            // 
+            this.themeUrlDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.themeUrlDataGridViewTextBoxColumn.DataPropertyName = "ThemeUrl";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.themeUrlDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.themeUrlDataGridViewTextBoxColumn.HeaderText = "ThemeUrl";
+            this.themeUrlDataGridViewTextBoxColumn.Name = "themeUrlDataGridViewTextBoxColumn";
+            this.themeUrlDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastUpdateDataGridViewTextBoxColumn
+            // 
+            this.lastUpdateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lastUpdateDataGridViewTextBoxColumn.DataPropertyName = "LastUpdate";
+            this.lastUpdateDataGridViewTextBoxColumn.HeaderText = "LastUpdate";
+            this.lastUpdateDataGridViewTextBoxColumn.Name = "lastUpdateDataGridViewTextBoxColumn";
+            // 
+            // resultDataGridViewTextBoxColumn
+            // 
+            this.resultDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.resultDataGridViewTextBoxColumn.DataPropertyName = "Result";
+            this.resultDataGridViewTextBoxColumn.HeaderText = "Result";
+            this.resultDataGridViewTextBoxColumn.Name = "resultDataGridViewTextBoxColumn";
+            this.resultDataGridViewTextBoxColumn.Width = 62;
             // 
             // frmAddRecord
             // 
@@ -127,6 +171,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upRecordBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,9 +181,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnAdd;
-        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtUrl;
         private System.Windows.Forms.DataGridView dataGridView;
         private FontAwesome.Sharp.IconButton btnRemoove;
         private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn accountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource upRecordBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn themeUrlDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn resultDataGridViewTextBoxColumn;
     }
 }

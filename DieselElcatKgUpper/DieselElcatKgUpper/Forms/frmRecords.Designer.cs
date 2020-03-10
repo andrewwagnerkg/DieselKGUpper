@@ -28,13 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnStartPause = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.themeUrlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastUpdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resultDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.upRecordBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upRecordBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,6 +68,7 @@
             this.btnStartPause.Text = "Старт/Пауза";
             this.btnStartPause.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnStartPause.UseVisualStyleBackColor = true;
+            this.btnStartPause.Click += new System.EventHandler(this.btnStartPause_Click);
             // 
             // panel2
             // 
@@ -73,12 +81,48 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.themeUrlDataGridViewTextBoxColumn,
+            this.lastUpdateDataGridViewTextBoxColumn,
+            this.resultDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.upRecordBindingSource1;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(1039, 546);
             this.dataGridView.TabIndex = 0;
+            // 
+            // themeUrlDataGridViewTextBoxColumn
+            // 
+            this.themeUrlDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.themeUrlDataGridViewTextBoxColumn.DataPropertyName = "ThemeUrl";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.themeUrlDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.themeUrlDataGridViewTextBoxColumn.HeaderText = "Url темы";
+            this.themeUrlDataGridViewTextBoxColumn.Name = "themeUrlDataGridViewTextBoxColumn";
+            this.themeUrlDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastUpdateDataGridViewTextBoxColumn
+            // 
+            this.lastUpdateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lastUpdateDataGridViewTextBoxColumn.DataPropertyName = "LastUpdate";
+            this.lastUpdateDataGridViewTextBoxColumn.HeaderText = "LastUpdate";
+            this.lastUpdateDataGridViewTextBoxColumn.Name = "lastUpdateDataGridViewTextBoxColumn";
+            // 
+            // resultDataGridViewTextBoxColumn
+            // 
+            this.resultDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.resultDataGridViewTextBoxColumn.DataPropertyName = "Result";
+            this.resultDataGridViewTextBoxColumn.HeaderText = "Result";
+            this.resultDataGridViewTextBoxColumn.Name = "resultDataGridViewTextBoxColumn";
+            this.resultDataGridViewTextBoxColumn.Width = 62;
+            // 
+            // upRecordBindingSource1
+            // 
+            this.upRecordBindingSource1.DataSource = typeof(DieselElcatKgUpper.Data.UpRecord);
             // 
             // frmRecords
             // 
@@ -92,6 +136,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upRecordBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -102,5 +147,10 @@
         private FontAwesome.Sharp.IconButton btnStartPause;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn accountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource upRecordBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn themeUrlDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn resultDataGridViewTextBoxColumn;
     }
 }
