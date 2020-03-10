@@ -60,6 +60,7 @@
     <Compile Include="Classes\IUpper.cs" />
     <Compile Include="Classes\Settings.cs" />
     <Compile Include="Data\Account.cs" />
+    <Compile Include="Data\AccountManager.cs" />
     <Compile Include="Data\UpRecord.cs" />
     <Compile Include="Forms\frmAddAccount.cs">
       <SubType>Form</SubType>

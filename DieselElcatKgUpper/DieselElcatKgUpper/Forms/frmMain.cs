@@ -1,4 +1,5 @@
-﻿using DieselElcatKgUpper.Forms;
+﻿using DieselElcatKgUpper.Data;
+using DieselElcatKgUpper.Forms;
 using System.Windows.Forms;
 
 namespace DieselElcatKgUpper
@@ -12,6 +13,7 @@ namespace DieselElcatKgUpper
         {
             InitializeComponent();
             ShowChild(new frmRecords());
+            this.Text += $" [{AccountManager.GetInstance().Account.Login}]";
         }
 
         private void ShowChild(Form form)
