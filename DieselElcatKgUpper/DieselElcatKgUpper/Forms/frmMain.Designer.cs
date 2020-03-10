@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnSettings = new FontAwesome.Sharp.IconButton();
             this.btnAddAccount = new FontAwesome.Sharp.IconButton();
             this.btnAddTheme = new FontAwesome.Sharp.IconButton();
             this.btnRecords = new FontAwesome.Sharp.IconButton();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,6 +131,12 @@
             this.pnlContent.Size = new System.Drawing.Size(1043, 541);
             this.pnlContent.TabIndex = 1;
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "DieselElcatKgUpper";
+            this.notifyIcon.Visible = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,6 +160,7 @@
         private FontAwesome.Sharp.IconButton btnAddAccount;
         private FontAwesome.Sharp.IconButton btnAddTheme;
         private FontAwesome.Sharp.IconButton btnRecords;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
 
