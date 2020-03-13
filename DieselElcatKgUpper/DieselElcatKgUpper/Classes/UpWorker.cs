@@ -32,35 +32,21 @@ namespace DieselElcatKgUpper.Classes
                 if (isPause) continue;
                 Thread.Sleep(1000);
 
-                using (IUpper upper = new DieselUpper())
-                {
-                    foreach (UpRecord item in UpRecordManager.GetInstance().UpRecords)
-                    {
-                        try
-                        {
-                            // upper.Login(AccountManager.GetInstance().Account.Login, AccountManager.GetInstance().Account.Password);
-                            // upper.Up(item.ThemeUrl);
-                            //upper.Logout();
-                            item.Result = "OK";
-                        }
-                        catch (Exception ex)
-                        {
-                            item.Result = $"FAIL {ex.Message}";
-                        }
-                        finally
-                        {
-                            item.LastUpdate = DateTime.Now;
-                            UpRecordManager.GetInstance().Save();
-                            ListChanged?.Invoke();
-                        }
 
-                        if (item.LastUpdate.Subtract(DateTime.Now).TotalMinutes >= 24 * 60)
+                foreach (UpRecord item in UpRecordManager.GetInstance().UpRecords)
+                {
+                    double mins = DateTime.Now.Subtract(item.LastUpdate).TotalMinutes;
+                    int set = 24 * 60;
+
+                    if (DateTime.Now.Subtract(item.LastUpdate).TotalMinutes >= 2)
+                    {
+                        using (IUpper upper = new DieselUpper())
                         {
                             try
                             {
-                               // upper.Login(AccountManager.GetInstance().Account.Login, AccountManager.GetInstance().Account.Password);
-                               // upper.Up(item.ThemeUrl);
-                                //upper.Logout();
+                                upper.Login(AccountManager.GetInstance().Account.Login, AccountManager.GetInstance().Account.Password);
+                                upper.Up(item.ThemeUrl);
+                                upper.Logout();
                                 item.Result = "OK";
                             }
                             catch (Exception ex)

@@ -12,18 +12,25 @@ namespace DieselElcatKgUpper.Classes
         public DieselUpper()
         {
             FirefoxOptions options = new FirefoxOptions();
-            //options.AddArgument("-headless");
+            options.AddArgument("-headless");
             options.SetPreference("javascript.enabled", false);
             options.BrowserExecutableLocation = @"MozillaFirefox\firefox.exe";
             var service = FirefoxDriverService.CreateDefaultService();
-            //service.HideCommandPromptWindow = true;
+            service.HideCommandPromptWindow = true;
             chrome = new FirefoxDriver(service, options, TimeSpan.FromSeconds(10));
         }
 
         public void Dispose()
         {
-            chrome.Close();
-            chrome.Dispose();
+            try
+            {
+                chrome.Close();
+                chrome.Dispose();
+            }
+            catch
+            {
+                 
+            }
         }
 
         public void Login(string login, string password)
@@ -62,7 +69,7 @@ namespace DieselElcatKgUpper.Classes
             }
             catch (WebDriverException ex)
             {
-                throw new Exception(ex.Message);
+                //throw new Exception(ex.Message);
             }
 
             var form = chrome.FindElementById("ips_fastReplyForm");
