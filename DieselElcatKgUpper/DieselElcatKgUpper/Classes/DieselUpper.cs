@@ -79,7 +79,7 @@ namespace DieselElcatKgUpper.Classes
             textarea.Click();
 
             textarea.SendKeys("Up");
-            //chrome.FindElementById("submit_post").Click();
+            chrome.FindElementById("submit_post").Click();
         }
     }
 }
