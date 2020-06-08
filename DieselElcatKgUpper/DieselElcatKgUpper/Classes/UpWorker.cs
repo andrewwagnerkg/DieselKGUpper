@@ -7,15 +7,13 @@ namespace DieselElcatKgUpper.Classes
     public class UpWorker
     {
         public event Action ListChanged;
-        private static UpWorker _instance = null;
+        private static readonly UpWorker _instance = new UpWorker();
         public Thread currentThread;
         public bool isPause { get; set; } = true;
         public bool isWork { get; set; } = true;
 
         public static UpWorker GetInstance()
         {
-            if (_instance == null)
-                _instance = new UpWorker();
             return _instance;
         }
 
