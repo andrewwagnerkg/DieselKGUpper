@@ -1,5 +1,6 @@
 ﻿using DieselElcatKgUpper.Classes;
 using DieselElcatKgUpper.Data;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace DieselElcatKgUpper.Forms
             InitializeComponent();
             UpRecordManager.GetInstance().Update(dataGridView);
             UpWorker.GetInstance().ListChanged += FrmMain_ListChanged;
+            ChangeBtnIcon();
         }
 
         private void FrmMain_ListChanged()
@@ -36,6 +38,26 @@ namespace DieselElcatKgUpper.Forms
         private void btnStartPause_Click(object sender, EventArgs e)
         {
             UpWorker.GetInstance().isPause = !UpWorker.GetInstance().isPause;
+            ChangeBtnIcon();
+        }
+
+        private void ChangeBtnIcon()
+        {
+            if (UpWorker.GetInstance().isPause)
+            {
+                btnStartPause.IconChar = IconChar.Play;
+                btnStartPause.Text = "Start";
+            }
+            else
+            {
+                btnStartPause.IconChar = IconChar.Pause;
+                btnStartPause.Text = "Pause";
+            }
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

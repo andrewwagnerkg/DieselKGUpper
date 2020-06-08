@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnStartPause = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -65,7 +65,7 @@
             this.btnStartPause.Rotation = 0D;
             this.btnStartPause.Size = new System.Drawing.Size(94, 59);
             this.btnStartPause.TabIndex = 0;
-            this.btnStartPause.Text = "Старт/Пауза";
+            this.btnStartPause.Text = "Start";
             this.btnStartPause.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnStartPause.UseVisualStyleBackColor = true;
             this.btnStartPause.Click += new System.EventHandler(this.btnStartPause_Click);
@@ -94,13 +94,14 @@
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(1039, 546);
             this.dataGridView.TabIndex = 0;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // themeUrlDataGridViewTextBoxColumn
             // 
             this.themeUrlDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.themeUrlDataGridViewTextBoxColumn.DataPropertyName = "ThemeUrl";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.themeUrlDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.themeUrlDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.themeUrlDataGridViewTextBoxColumn.HeaderText = "Url темы";
             this.themeUrlDataGridViewTextBoxColumn.Name = "themeUrlDataGridViewTextBoxColumn";
             this.themeUrlDataGridViewTextBoxColumn.ReadOnly = true;
