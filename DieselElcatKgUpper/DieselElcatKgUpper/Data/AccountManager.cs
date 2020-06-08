@@ -6,13 +6,13 @@ namespace DieselElcatKgUpper.Data
     public class AccountManager
     {
 
-        private static AccountManager _instance = null;
+        private static readonly AccountManager _instance = new AccountManager();
+
         public static AccountManager GetInstance()
         {
-            if (_instance == null)
-                _instance = new AccountManager();
             return _instance;
         }
+
         public Account Account { get; set; }
 
         private AccountManager()
