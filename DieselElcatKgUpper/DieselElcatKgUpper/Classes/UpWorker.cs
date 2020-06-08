@@ -36,9 +36,9 @@ namespace DieselElcatKgUpper.Classes
                 foreach (UpRecord item in UpRecordManager.GetInstance().UpRecords)
                 {
                     double mins = DateTime.Now.Subtract(item.LastUpdate).TotalMinutes;
-                    int set = 24 * 60;
+                    int set = 24 * 60 + 1;
 
-                    if (DateTime.Now.Subtract(item.LastUpdate).TotalMinutes >= 2)
+                    if (mins >= set)
                     {
                         using (IUpper upper = new DieselUpper())
                         {
