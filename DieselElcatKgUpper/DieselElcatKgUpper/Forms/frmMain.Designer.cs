@@ -80,7 +80,7 @@
             // 
             this.btnAddAccount.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnAddAccount.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.btnAddAccount.IconColor = System.Drawing.Color.Maroon;
+            this.btnAddAccount.IconColor = System.Drawing.Color.Black;
             this.btnAddAccount.IconSize = 48;
             this.btnAddAccount.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAddAccount.Location = new System.Drawing.Point(174, 12);
@@ -157,26 +157,26 @@
             // показатьСкрытьToolStripMenuItem
             // 
             this.показатьСкрытьToolStripMenuItem.Name = "показатьСкрытьToolStripMenuItem";
-            this.показатьСкрытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.показатьСкрытьToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.показатьСкрытьToolStripMenuItem.Text = "Показать/Скрыть";
             this.показатьСкрытьToolStripMenuItem.Click += new System.EventHandler(this.показатьСкрытьToolStripMenuItem_Click);
             // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(167, 6);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
