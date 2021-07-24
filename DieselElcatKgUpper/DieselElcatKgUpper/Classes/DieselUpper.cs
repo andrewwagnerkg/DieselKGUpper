@@ -27,9 +27,9 @@ namespace DieselElcatKgUpper.Classes
                 chrome.Close();
                 chrome.Dispose();
             }
-            catch
+            finally
             {
-                 
+
             }
         }
 
@@ -39,20 +39,20 @@ namespace DieselElcatKgUpper.Classes
             chrome.Url = "https://diesel.elcat.kg";
             chrome.Navigate();
             chrome.FindElementById("sign_in").Click();
-            var inputusername = chrome.FindElementById("ips_username");
-            inputusername.Click();
-            inputusername.SendKeys(login);
-            inputusername = chrome.FindElementById("ips_password");
-            inputusername.Click();
-            inputusername.SendKeys(password);
-            inputusername = chrome.FindElementsByClassName("input_submit").FirstOrDefault();
-            inputusername.Click();
+            var inputUserName = chrome.FindElementById("ips_username");
+            inputUserName.Click();
+            inputUserName.SendKeys(login);
+            inputUserName = chrome.FindElementById("ips_password");
+            inputUserName.Click();
+            inputUserName.SendKeys(password);
+            inputUserName = chrome.FindElementsByClassName("input_submit").FirstOrDefault();
+            inputUserName.Click();
         }
 
         public void Logout()
         {
-            var inputusername = chrome.FindElementByLinkText("Выход");
-            inputusername.Click();
+            var inputUserName = chrome.FindElementByLinkText("Выход");
+            inputUserName.Click();
         }
 
 
@@ -64,8 +64,8 @@ namespace DieselElcatKgUpper.Classes
 
             try
             {
-                IWebElement deletetheme = chrome.FindElement(By.LinkText("Удалить"));
-                deletetheme.Click();
+                IWebElement deleteTheme = chrome.FindElement(By.LinkText("Удалить"));
+                deleteTheme.Click();
             }
             catch (WebDriverException ex)
             {

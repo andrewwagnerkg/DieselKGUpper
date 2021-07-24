@@ -63,7 +63,7 @@ namespace DieselElcatKgUpper
 
         private void выходToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            UpWorker.GetInstance().isWork = !UpWorker.GetInstance().isWork;
+            UpWorker.GetInstance().IsWork = !UpWorker.GetInstance().IsWork;
             forseclose = true;
             Application.Exit();
         }

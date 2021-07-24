@@ -22,14 +22,14 @@ namespace DieselElcatKgUpper.Data
             {
                 using (Stream stream = new FileStream("account.xml", FileMode.OpenOrCreate, FileAccess.Read))
                 {
-                    Account =(Account)serializer.Deserialize(stream);
+                    Account = (Account)serializer.Deserialize(stream);
                 }
             }
             else
             {
                 Account = new Account();
             }
-                
+
         }
 
         public void Save()
@@ -37,11 +37,11 @@ namespace DieselElcatKgUpper.Data
             XmlSerializer serializer = new XmlSerializer(typeof(Account));
             if (File.Exists("account.xml"))
                 File.Delete("account.xml");
-            using(Stream stream=new FileStream("account.xml",FileMode.OpenOrCreate,FileAccess.Write))
+            using (Stream stream = new FileStream("account.xml", FileMode.OpenOrCreate, FileAccess.Write))
             {
                 serializer.Serialize(stream, Account);
             }
-            
+
         }
     }
 }

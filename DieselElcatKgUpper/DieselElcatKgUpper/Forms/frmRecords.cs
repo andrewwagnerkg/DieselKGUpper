@@ -30,13 +30,13 @@ namespace DieselElcatKgUpper.Forms
 
         private void btnStartPause_Click(object sender, EventArgs e)
         {
-            UpWorker.GetInstance().isPause = !UpWorker.GetInstance().isPause;
+            UpWorker.GetInstance().IsPause = !UpWorker.GetInstance().IsPause;
             ChangeBtnIcon();
         }
 
         private void ChangeBtnIcon()
         {
-            if (UpWorker.GetInstance().isPause)
+            if (UpWorker.GetInstance().IsPause)
             {
                 btnStartPause.IconChar = IconChar.Play;
                 btnStartPause.Text = "Start";

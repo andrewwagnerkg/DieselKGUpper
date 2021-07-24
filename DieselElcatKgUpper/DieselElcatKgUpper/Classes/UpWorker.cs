@@ -1,6 +1,6 @@
 ﻿using DieselElcatKgUpper.Data;
 using System;
-using System.Threading;
+using System.Threading.Tasks;
 
 namespace DieselElcatKgUpper.Classes
 {
@@ -8,9 +8,8 @@ namespace DieselElcatKgUpper.Classes
     {
         public event Action ListChanged;
         private static readonly UpWorker _instance = new UpWorker();
-        public Thread currentThread;
-        public bool isPause { get; set; } = true;
-        public bool isWork { get; set; } = true;
+        public bool IsPause { get; set; } = true;
+        public bool IsWork { get; set; } = true;
 
         public static UpWorker GetInstance()
         {
@@ -19,16 +18,15 @@ namespace DieselElcatKgUpper.Classes
 
         private UpWorker()
         {
-            currentThread = new Thread(process);
-            currentThread.Start();
+            new Task(process).Start();
         }
 
         private void process()
         {
-            while (isWork)
+            while (IsWork)
             {
-                if (isPause) continue;
-                Thread.Sleep(1000);
+                if (IsPause) continue;
+                Task.Delay(1000);
 
 
                 foreach (UpRecord item in UpRecordManager.GetInstance().UpRecords)
@@ -58,16 +56,10 @@ namespace DieselElcatKgUpper.Classes
                                 ListChanged?.Invoke();
                             }
                         }
-                        Thread.Sleep(1000);
+                        Task.Delay(1000);
                     }
                 }
             }
-        }
-
-        internal void Abort()
-        {
-            isPause = true;
-
         }
     }
 }

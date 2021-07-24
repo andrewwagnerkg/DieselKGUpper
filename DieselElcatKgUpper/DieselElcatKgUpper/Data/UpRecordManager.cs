@@ -34,7 +34,7 @@ namespace DieselElcatKgUpper.Data
             }
         }
 
-        public void  Save()
+        public void Save()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<UpRecord>));
             if (File.Exists("records.xml"))
@@ -47,9 +47,9 @@ namespace DieselElcatKgUpper.Data
 
         public void Update(DataGridView grid)
         {
-            grid.DataSource = null; 
+            grid.DataSource = null;
             grid.DataSource = UpRecords;
-            
+
         }
     }
 }
